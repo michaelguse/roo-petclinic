@@ -1,6 +1,6 @@
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-10-06 22:50:57
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-05 22:08:08
 project --topLevelPackage com.springsource.petclinic
-persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 enum type --class ~.reference.PetType
 enum constant --name Dog
 enum constant --name Cat
@@ -9,11 +9,11 @@ enum type --class ~.reference.Specialty
 enum constant --name Cardiology
 enum constant --name Dentistry
 enum constant --name Nutrition
-entity --class ~.domain.Pet --testAutomatically
-entity --class ~.domain.Visit --testAutomatically
-entity --class ~.domain.AbstractPerson --abstract
-entity --class ~.domain.Vet --extends ~.domain.AbstractPerson --testAutomatically
-entity --class ~.domain.Owner --extends ~.domain.AbstractPerson --testAutomatically
+entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
+entity jpa --class ~.domain.Visit --sequenceName VISIT_SEQ
+entity jpa --class ~.domain.AbstractPerson --abstract
+entity jpa --class ~.domain.Vet --extends ~.domain.AbstractPerson
+entity jpa --class ~.domain.Owner --extends ~.domain.AbstractPerson
 field string --fieldName firstName --sizeMin 3 --sizeMax 30 --class ~.domain.AbstractPerson
 field string --fieldName lastName --notNull --sizeMin 3 --sizeMax 30
 field string --fieldName address --notNull --sizeMax 50 --sizeMin 1
@@ -41,8 +41,13 @@ finder add --finderName findPetsByTypeAndNameLike
 finder add --finderName findVisitsByDescriptionAndVisitDate --class ~.domain.Visit
 finder add --finderName findVisitsByVisitDateBetween
 finder add --finderName findVisitsByDescriptionLike
+test integration --entity ~.domain.Vet
+test integration --entity ~.domain.Owner
+test integration --entity ~.domain.Pet
+test integration --entity ~.domain.Visit
 web mvc setup
 web mvc all --package ~.web
+web mvc finder all
 web mvc language --code de
 web mvc language --code es
 selenium test --controller ~.web.OwnerController
@@ -52,35 +57,8 @@ selenium test --controller ~.web.VisitController
 logging setup --level INFO
 // script --file clinic.roo
 quit
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-10-06 22:51:21
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-10-06 22:51:32
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-05 22:08:40
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-05 22:08:56
 persistence setup --provider HIBERNATE --database POSTGRES
 quit
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-10-06 22:51:44
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-01 23:10:06
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-01 23:10:59
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-01 23:11:07
-persistence setup --provider HIBERNATE --database POSTGRES
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-01 23:11:13
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-02 01:12:33
-download status
-download accept terms of use
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-02 01:13:10
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-02 01:13:27
-persistence setup --provider HIBERNATE --database POSTGRES
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-02 01:13:33
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-02 02:00:46
-hint
-help
-addon list
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-02 02:11:17
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-05 21:22:40
-hint
-database properties list
-quit
-// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-05 21:24:44
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-05 22:09:13
