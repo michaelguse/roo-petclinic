@@ -73,3 +73,14 @@ quit
 persistence setup --provider HIBERNATE --database POSTGRES
 quit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-02 01:13:33
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-02 02:00:46
+hint
+help
+addon list
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-02 02:11:17
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-06-05 21:22:40
+hint
+database properties list
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-06-05 21:24:44
